@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar */
+#toolbar {
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-ghost {
+  background: #e5e7eb;
+}
+
+.btn-ghost:hover {
+  background: #d1d5db;
+}
+
+/* Layout */
+#app {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Canvas */
+#canvas {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  background: white;
+}
+
+/* SVG overlay */
+#svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3000px;
+  height: 3000px;
+  pointer-events: none;
+}
+
+/* Nodes */
+.node-card {
+  position: absolute;
+  width: 220px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.node-card.selected {
+  border: 2px solid #2563eb;
+}
+
+.node-card.dragging {
+  opacity: 0.8;
+  cursor: grabbing;
+}
+
+/* Node header */
+.node-header {
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* Node body */
+.node-body {
+  padding: 12px;
+}
+
+.node-question {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.node-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.node-option {
+  background: #f3f4f6;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* Edit panel */
+#edit-panel {
+  width: 300px;
+  background: white;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;
+  display: none;
+}
+
+#edit-panel.open {
+  display: block;
+}
+
+#edit-panel textarea,
+#edit-panel input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.panel-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Preview panel */
+#preview-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview-panel.open {
+  display: flex;
+}
+
+/* Chat window */
+.chat-window {
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+}
+
+.chat-body {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.user-bubble {
+  background: #2563eb;
+  color: white;
+  text-align: right;
+}
+
+/* Chat buttons */
+.chat-option-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.chat-option-btn:hover {
+  background: #d1d5db;
+}
